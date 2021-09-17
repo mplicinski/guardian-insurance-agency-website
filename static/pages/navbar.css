@@ -1,0 +1,9 @@
+.nav-item {
+    border-top: 0.1875rem solid #da1f34;
+    margin: 5px;
+}
+
+.nav-item:hover {
+    border-top: 0.1875rem solid white;
+    transition: all 0.2s ease-out;
+}

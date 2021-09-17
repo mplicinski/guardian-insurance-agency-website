@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type='text/css' href="{% static 'pages/pages.css' %}">
+{% block content %}
+
+{% include 'pages/partials/header.html' %}
+
+<div id="content" class="container justify-content-center">
+    {% include 'pages/partials/card.html' with title=card_title1 text=card_text1 img_src=img_src1 img_alt=img_alt1%}
+    {% include 'pages/partials/card.html' with title=card_title2 text=card_text2 img_src=img_src2 img_alt=img_alt2%}
+    {% include 'pages/partials/card.html' with title=card_title3 text=card_text3 img_src=img_src3 img_alt=img_alt3%}
+</div>
+
+{% endblock %}
