@@ -1,6 +1,7 @@
 from typing import ContextManager
 from django import forms
-from django.shortcuts import render
+from django.contrib.messages.api import MessageFailure
+from django.shortcuts import redirect, render
 from django.views.generic import TemplateView, FormView
 from django.conf import settings
 from django.core.mail import send_mail
@@ -47,7 +48,6 @@ class CommercialView(TemplateView):
 class ContactView(FormView):
     template_name = 'pages/contact.html'
     form_class = ContactForm
-    # success_message = 'Form submission succesful'
     success_url = reverse_lazy('contact')
 
     def form_valid(self, form):
@@ -61,7 +61,7 @@ class ContactView(FormView):
         full_message = f"Name: {name}\n\n Email: {email}\n\n Phone number: {phone_number}\n\n {message}" # constructing a full message including the sender name & email
         
         email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['mzp.devtesting@gmail.com']
+        recipient_list = ['mplicinski@gmail.com']
         
         if 'cert' in full_message.lower() or 'cert' in subject.lower():  # checking for possible certificate request
             recipient_list.append('erzinsurance@gmail.com') # add commercial email 
@@ -69,7 +69,11 @@ class ContactView(FormView):
         send_mail(subject, full_message, email_from, recipient_list)
         messages.success(self.request, "Contact form submission successful. We'll get back to you soon!")
         return super().form_valid(form)
-
+    
+    def form_invalid(self, form):
+        messages.error(self.request, "Error submitting form")
+        redirect(reverse_lazy('contact'))
+        return super().form_invalid(form)
 
 class AboutView(TemplateView):
     template_name = 'pages/about.html'
