@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
-<h1>Commercial</h1>
+
+{% include 'pages/partials/small-header.html'%}
+{% include 'pages/partials/small-cards-and-features.html' %}
+
 {% endblock %}

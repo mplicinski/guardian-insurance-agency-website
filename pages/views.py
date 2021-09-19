@@ -43,6 +43,7 @@ class PersonalView(TemplateView):
         context.update({
             'header_title': "Personal",
             'header_subtitle': "Insurance for your personal assets",
+            'header_img' : "images/personal_header.png",
 
             # triple small card header section
             # card 1 - home
@@ -87,6 +88,52 @@ class PersonalView(TemplateView):
 
 class CommercialView(TemplateView):
     template_name = 'pages/commercial.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'header_title': "Commercial",
+            'header_subtitle': "Insurance for your business and commercial assets",
+            'header_img' : "images/commercial_header.png",
+
+            # triple small card header section
+            # card 1 - dump truck
+            'card_title1': "Dump Truck Insurance",
+            'card_text1': "Insurance for local dump haulers.",
+            'card_img1': 'images/truck-monster-solid.png',
+            'card_alt1': "Truck graphic",
+
+            # card 2 - long distance transport
+            'card_title2': "Long Distance Insurance",
+            'card_text2': "Insurance for long distance hauling & transport",
+            'card_img2': 'images/truck-moving-solid.png',
+            'card_alt2': "Semi-truck graphic",
+
+            # card 3 - contractor / business
+            'card_title3': "Contractor Insurance",
+            'card_text3': "Insurance for contractors and businesses.",
+            'card_img3': 'images/tools-solid.png',
+            'card_alt3': "Tools graphic",
+
+            # features
+            # feature 1 - dump truck
+            'feature_title1': "Dump Truck Insurance",
+            'feature_text1': "Dump truck insurance could include liability insurance, physical damage insurance, and workers compensation insurance. This all depends on whether you’d be working as an independent owner operator or for another trucking company. Whatever your dump truck needs are our agents will ensure you have all the coverages you need for whatever your personal situation is. ",
+            'feature_img1': "images/dump.jpg",
+            'feature_alt1': "Dump hauler on a construction site.",
+
+            # feature 2 - long distance transport
+            'feature_title2': "Long Distance Transport Insurance",
+            'feature_text2':"We offer a great variety of trucking insurance. This includes coverage for anything from cargo haulers to auto haulers. We also offer cargo coverage, so we’ll make sure that you have right amount to completely cover whatever you’re hauling. Contact us and help us get you the perfect trucking policy so that you can have peace of mind when you’re out on the road.",
+            'feature_img2': "images/long_distance.jpg",
+            'feature_alt2': "Semi-truck driving down thte road.",
+
+            # feature 3 - contractor / business
+            'feature_title3': "Contractor & Business Insurance",
+            'feature_text3': "Whatever your unique business policy needs are we can help you get the perfect policy to make sure all your bases are covered. This could include bodily injury, property damage, medical expenses, and defense costs, etc. When you get a policy with us you won’t have to worry about what could go wrong on the job and instead you can focus on providing the best service for your clients.",
+            'feature_img3': "images/contractor.jpg",
+            'feature_alt3': "A contractor working outside a home.",
+        })
+        return context
 
 
 class ContactView(FormView):
