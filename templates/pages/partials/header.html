@@ -7,19 +7,8 @@
       <h1 class="text-responsive-large">WELCOME TO THE GUARDIAN AGENCY</h1>
       <h5 class="text-responsive-small">Learn how we can help guard what's most valuable to you</h5>
       {% comment %} <a class="btn btn-primary btn-lg" href="#content" role="button">Learn more</a> {% endcomment %}
-      <button class="btn btn-primary btn-lg" onclick="scrollDiv()" >Learn more</button>
+      <button class="btn btn-primary btn-lg" onclick="scrollDivId('content')" >Learn more</button>
     </div>
   </div>
 <!-- /.container   -->
 </div>
-
-<script>
-    function scrollDiv() {
-        //var elem = document.getElementById("content");
-        const id = 'content'
-        const yOffset = -120; 
-        const element = document.getElementById(id);
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-</script>
