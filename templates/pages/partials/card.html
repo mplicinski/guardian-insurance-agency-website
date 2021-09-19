@@ -2,9 +2,9 @@
 <div class="card w-100 shadow mt-3 mb-3 bg-white rounded">
   <div class="card-body row">
     <div class="col-md-7 d-flex align-items-start flex-column">
-        <h5 class="card-title">{{ title }}</h5>
-        <p class="card-text">{{ text }}</p>
-        <a href="#" class="btn btn-primary mt-auto mb-1">Button</a>
+        <h3 class="card-title">{{ title }}</h3>
+        <p class="card-text lead">{{ text }}</p>
+        <a href="{% url button_link %}" class="btn btn-primary mt-auto mb-1">Learn more</a>
     </div>
     <div class="col-md-5">
         <img src="{% static '' %}{{ img_src }}" alt="{{ img_alt }}" class="w-100 img-thumbnail">

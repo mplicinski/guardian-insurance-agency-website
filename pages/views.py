@@ -17,22 +17,25 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update({
             # card 1 - home
-            'card_title1': "Context title",
-            'card_text1': "With supporting text below as a natural lead-in to additional content.",
-            'img_src1': 'images/home.jpg',
+            'card_title1': "Personal Insurance",
+            'card_text1': "We can guard your personal assets like your car and home with more than 15 of the best companies available. Learn more about our services in Home, Auto, and Life Insurance.",
+            'img_src1': 'images/home.png',
             'img_alt1': "Picture of home",
+            'button_link1':"personal",
 
             # card 2 - commerical
-            'card_title2': "Context title",
-            'card_text2': "With supporting text below as a natural lead-in to additional content.",
-            'img_src2': 'images/trucks.jpg',
+            'card_title2': "Commercial Insurance",
+            'card_text2': "We can help protect the most important things to keep your business running smoothly. We offer a variety of policies for all types of businesses. Learn about our services, dump trucks, long distance hauling, contracting, and more.",
+            'img_src2': 'images/trucks.png',
             'img_alt2': "Picture of truck parking lot",
+            'button_link2':"commercial",
 
             # card 3 - about us
-            'card_title3': "Context title",
-            'card_text3': "With supporting text below as a natural lead-in to additional content.",
+            'card_title3': "About Us",
+            'card_text3': "Learn more about who we are and our experience in the insurance industry.",
             'img_src3': 'images/header_bg.png',
             'img_alt3': "Picture of home",
+            'button_link3':"about"
         })
         return context
 
