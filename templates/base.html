@@ -18,15 +18,17 @@
 
     <title>Guardian Insurance Agency</title>
   </head>
-  <body>
-
-    {% include 'pages/navbar.html' %}
-
-    {% block content %}
-    {% endblock %}
-
-    {% include 'pages/footer.html' %}
-
+  <body class="d-flex flex-column min-vh-100">
+    <div>
+      {% include 'pages/navbar.html' %}
+    </div>
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="mt-auto">
+      {% include 'pages/footer.html' %}
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

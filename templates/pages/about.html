@@ -1,4 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<h1>About</h1>
+<section class="about-us py-5 " id="about-us">
+    <div class="container mt-5">
+	<div class="row">
+		<div class="col-md-6">
+		    <h1 class=''>Welcome!</h1>
+		    <h2>Learn More About Us</h2>
+		    <hr>
+		    <p class="lead"> Guardian Insurance Agency has been in business for 23 years. We offer the best customer service and have many companies available to us. That means you not only get the best prices, but you also get the best and most comprehensive coverage for whatever you need to insure.</p>
+		    <p class="lead">We’re always available to help with any situation. Is there an emergency? You can even reach us in the evening or on the weekend. We don’t only pride ourselves on having the best service we also ensure that you have the best and most comprehensive policies for whatever your needs are. We won’t cut important parts of a policy just to lower your price. We’ll make sure you have the best policy with the best price.</p>
+		</div>
+		<div class="col-md-6 d-flex align-items-center">
+		    <img class="img-fluid" src="{% static 'images/logo-alt.png'%}"alt="">
+		</div>
+	</div>
+</div>
+</section>
 {% endblock %}
