@@ -6,3 +6,11 @@
     background-color: #302f80;
     border: #302f80;
 }
+
+.text-responsive-large {
+    font-size: calc(100% + 2vw + 2vh);
+}
+  
+.text-responsive-small {
+      font-size: calc(100% + 1vw + 1vh);    
+}
