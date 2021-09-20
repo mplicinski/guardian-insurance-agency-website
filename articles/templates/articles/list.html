@@ -2,8 +2,11 @@
 
 {% block content %}
 
+<div class="container">
+<h5><a href="{% url 'articles:create' %}">Create New Article</a></h5>
+
 {% for instance in object_list %}
     <p>{{ instance.id }} - <a href="{{ instance.get_absolute_url }}">{{instance.title}}</a></p>
 {% endfor %}
-
+</div>
 {% endblock %}

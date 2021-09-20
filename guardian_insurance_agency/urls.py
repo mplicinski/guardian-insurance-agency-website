@@ -31,5 +31,6 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('about/', AboutView.as_view(), name='about'),
     path('blog/', include('articles.urls')),
+    path('staff/', include('staff.urls')),
     path('admin/', admin.site.urls),
 ]
