@@ -1,0 +1,15 @@
+.card {
+    transition: all 0.2s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-out;
+  }
+
+.jumbotron {
+    position: relative;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

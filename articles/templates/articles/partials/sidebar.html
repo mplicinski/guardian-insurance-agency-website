@@ -1,0 +1,25 @@
+{% load static %}
+<div class="card mb-2" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/contact.png' %}"alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Contact Us</h5>
+    <p class="card-text">Have more questions? Please contact us! We speak English, Polish, and Tagalog.</p>
+    <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>
+  </div>
+</div>
+<div class="card mb-2" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/personal_header.png' %}"alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Personal Insurance</h5>
+    <p class="card-text">Learn more about our services in Home, Auto, and Life insurance.</p>
+    <a href="{% url 'personal' %}" class="btn btn-primary">Learn more</a>
+  </div>
+</div>
+<div class="card mb-2" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/commercial_header.png' %}"alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Commercial Insurance</h5>
+    <p class="card-text">Learn more about our services in Commercial Auto, and Business Insurance.</p>
+    <a href="{% url 'commercial' %}" class="btn btn-primary">Learn more</a>
+  </div>
+</div>

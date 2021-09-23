@@ -7,10 +7,24 @@
     border: #302f80;
 }
 
+.btn-secondary {
+    background-color: #da1f34;
+    border: #da1f34;
+}
+
+.btn-secondary:hover {
+    background-color: red;
+    border: red;
+}
+
 .text-responsive-large {
     font-size: calc(100% + 2vw + 2vh);
 }
   
 .text-responsive-small {
       font-size: calc(100% + 1vw + 1vh);    
+}
+
+.text-responsive-smaller {
+    font-size: calc(100% + .6vw + .6vh);    
 }

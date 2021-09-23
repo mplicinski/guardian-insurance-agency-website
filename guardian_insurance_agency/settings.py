@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #my apps
     'pages',
+    'articles',
+    'staff',
     #3rd part
     "django_static_fontawesome",
 ]

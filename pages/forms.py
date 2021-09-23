@@ -17,8 +17,8 @@ class ContactForm(forms.Form):
             self.fields[str(field)].widget.attrs.update(new_data)
         self.fields['name'].widget.attrs.update({"placeholder":"Name or Company Name"})
         message_extra_data = {
-            "rows":8,
+            "rows":10,
             "class":"form-control md-textarea"
         }
-        self.fields['message'].widget.attrs.update(new_data)
+        self.fields['message'].widget.attrs.update(message_extra_data)
         self.fields['phone_number'].widget.attrs.update({"placeholder":"Phone number"})

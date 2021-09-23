@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container text-center mt-5">
+    {% if not request.user.is_authenticated %}
+    <p>Would you like to login? <a href="{% url 'staff:login' %}">Login</a></p>
+    {% else %}
+    <p>You're already logged in. Would you like to <a href="{%url 'staff:logout' %}">Logout</a>?</p>
+    {% endif %}
+</div>
+
+{% endblock %}

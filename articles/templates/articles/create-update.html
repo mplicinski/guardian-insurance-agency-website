@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block content %} 
+
+
+<div class="container mt-3">
+    <form action="." method="POST"> {% csrf_token %}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        <div class="md-form mb-2">
+            {{ form.title.errors }}
+            <label for="{{form.title.id_for_lable }}">Article Title</label>
+            {{ form.title }}
+        </div>
+        <div class="md-form mb-2">
+            {{ form.content.errors }}
+            <label for="{{ form.content.id_for_lable }}">Article Content</label>
+            {{ form.content }}
+        </div>
+        <input class="btn btn-primary my-2" type="submit" value='Submit'>
+    </form>
+</div>
+
+
+{% endblock content %}
