@@ -4,10 +4,12 @@ from django.db.models import Q, lookups
 from django.db.models.signals import pre_save, post_save
 from django.urls import reverse
 from django.utils import timezone
+from django.contrib.auth.models import User
+
 
 from .utils import slugify_instance_title
 
-User = settings.AUTH_USER_MODEL
+#User = settings.AUTH_USER_MODEL
 
 # Create your models here.
 class ArticleQuerySet(models.QuerySet):
@@ -30,7 +32,7 @@ class Article(models.Model):
     '''
     Article
     '''
-    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(User, blank=False, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True, blank=True, null=True)
     content = models.TextField()
@@ -48,10 +50,15 @@ class Article(models.Model):
 
     def get_delete_url(self):
         return reverse("articles:delete", kwargs={"slug": self.slug})
+
+    def get_content_preview(self):
+        content_preview = f"{self.content[:375]}..."
+        return content_preview
     
-    # def save(self, *args, **kwargs):
-    #    super().save(*args, **kwargs)
-        # we could do additional actions
+    # def save(self, request, *args, **kwargs):
+    #     self.user = request.user
+    #     super().save(*args, **kwargs)
+    #     # we could do additional actions
 
 def article_pre_save(sender, instance, *args, **kwargs): # instance is the particular instance of the model (Article) that is currently being sent
     # print('pre_save')

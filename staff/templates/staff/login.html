@@ -2,16 +2,17 @@
 
 {% block content %}
 
-{% if not request.user.is_authenticated %}
-<div style="margin-top:30px">
-    <form method="POST"action=""> {% csrf_token %}
-        {{ form.as_p }}
-        <button type='submit'>Login</button>
-    </form>
+<div class="container">
+    {% if not request.user.is_authenticated %}
+    <div style="margin-top:30px">
+        <form method="POST"action=""> {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type='submit'>Login</button>
+        </form>
+    </div>
+    {% else %}
+    <p>You're already logged in. Would you like to <a href="/logout/">logout</a>?</p>
+    {% endif %}
 </div>
-{% else %}
-<p>You're already logged in. Would you like to <a href="/logout/">logout</a>?</p>
-{% endif %}
-
 
 {% endblock %}

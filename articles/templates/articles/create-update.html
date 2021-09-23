@@ -2,17 +2,22 @@
 {% block content %} 
 
 
-{% if not created %}
-
-<div style="margin-top:30px">
+<div class="container mt-3">
     <form action="." method="POST"> {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value='Create Article'>
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        <div class="md-form mb-2">
+            {{ form.title.errors }}
+            <label for="{{form.title.id_for_lable }}">Article Title</label>
+            {{ form.title }}
+        </div>
+        <div class="md-form mb-2">
+            {{ form.content.errors }}
+            <label for="{{ form.content.id_for_lable }}">Article Content</label>
+            {{ form.content }}
+        </div>
+        <input class="btn btn-primary my-2" type="submit" value='Submit'>
     </form>
 </div>
-{% else %}
-<p>Your article was created</p>
-<a href="/articles/{{object.id}}"> {{ object.title }} </a>
-{% endif %}
+
 
 {% endblock content %}

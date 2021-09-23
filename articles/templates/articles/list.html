@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" type='text/css' href="{% static 'articles/list.css' %}">
+
+<div class="jumbotron rounded-0 text-white justify-content-center align-items-center" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({%static 'images/blog.png' %})">
+  <h1 class="text-center text-responsive-large">Blog</h1>
+  <h5 class="text-center text-responsive-smaller">Learn more about what makes a good insurance policy by reading our blogs</h5>
+  </p>
+</div>
 
 <div class="container">
-<h5><a href="{% url 'articles:create' %}">Create New Article</a></h5>
+{% if request.user.is_authenticated %}
+{% comment %} <h5><a href="{% url 'articles:create' %}">Create New Article</a></h5> {% endcomment %}
+<a href="{% url 'articles:create' %}"type="button" class="btn btn-primary btn-lg text-white">Create New Article</a>
+{% endif %}
 
 {% for instance in object_list %}
-    <p>{{ instance.id }} - <a href="{{ instance.get_absolute_url }}">{{instance.title}}</a></p>
+    <a class="text-reset text-decoration-none" href="{{ instance.get_absolute_url }}">
+        <div class="card my-3">
+            <h2 class="card-header">{{ instance.title }}</h2>
+            <div class="card-body">
+                <h5 class="card-title">{{ instance.created_at.date }}</h5>
+                <p class="card-text lead">{{ instance.get_content_preview }}</p>
+                <a href="{{ instance.get_absolute_url }}" class="btn btn-primary mt-2">Read Article</a>
+            </div>
+        </div>
+    </a>
 {% endfor %}
+
 </div>
 {% endblock %}
