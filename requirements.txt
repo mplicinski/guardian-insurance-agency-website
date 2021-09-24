@@ -1,5 +1,4 @@
 django>=3.2,<3.3
-django-static-fontawesome
 gunicorn
 psycopg2-binary
 django-dotenv
