@@ -1,0 +1,2 @@
+# guardian-insurance-agency-website
+A website for The Guardian Insurance Agency located in South Barrington, IL. The website includes informational pages about the types of insurance that are offered by the agency. It also includes a functional contact form that will dynamically send the form to different emails depending on the content of the email. It also includes a blog section and a staff sign-in that can be used to create, edit, and delete blogs directly on the website.
