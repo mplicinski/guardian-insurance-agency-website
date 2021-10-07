@@ -155,10 +155,12 @@ class ContactView(FormView):
         full_message = f"Name: {name}\n\n Email: {email}\n\n Phone number: {phone_number}\n\n {message}" # constructing a full message including the sender name & email
         
         email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['mzp.devtesting@gmail.com']
-        
-        if 'cert' in full_message.lower() or 'cert' in subject.lower():  # checking for possible certificate request
-            recipient_list.append('erzinsurance@gmail.com') # add commercial email 
+        if settings.DEBUG:
+            recipient_list = ['mzp.devtesting@gmail.com']
+        else:
+            recipient_list = ['service@emrz-ins.com']
+            if 'cert' in full_message.lower() or 'cert' in subject.lower():  # checking for possible certificate request
+                recipient_list.append('erzinsurance@gmail.com') # add commercial email 
 
         send_mail(subject, full_message, email_from, recipient_list)
         messages.success(self.request, "Contact form submission successful. We'll get back to you soon!")
