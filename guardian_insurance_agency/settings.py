@@ -30,7 +30,7 @@ DEBUG=str(os.environ.get('DEBUG'))=='1'
 ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
 ALLOWED_HOSTS = ['.ondigitalocean.app']
 if ENV_ALLOWED_HOST is not None:
-    ALLOWED_HOSTS = [ ENV_ALLOWED_HOST ]
+    ALLOWED_HOSTS.append(ENV_ALLOWED_HOST)
 
 # Application definition
 INSTALLED_APPS = [
@@ -158,6 +158,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+ 
 STATIC_ROOT = BASE_DIR / "staticfiles-cdn" # in production, we want cdn
 
 MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
