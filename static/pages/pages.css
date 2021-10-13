@@ -12,6 +12,11 @@
     border: #da1f34;
 }
 
+.banner_background {
+    background: rgb(150,149,245);
+    background: linear-gradient(90deg, rgba(150,149,245,1) 0%, rgba(102,101,198,1) 50%, rgba(61,61,144,1) 100%);
+}
+
 .btn-secondary:hover {
     background-color: red;
     border: red;
@@ -28,3 +33,12 @@
 .text-responsive-smaller {
     font-size: calc(100% + .6vw + .6vh);    
 }
+
+.card {
+    transition: all 0.2s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-out;
+  }

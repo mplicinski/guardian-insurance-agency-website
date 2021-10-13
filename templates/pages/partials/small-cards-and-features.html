@@ -1,5 +1,6 @@
 {% load static %}
-<div class="container marketing">
+<div class="">
+  <div class="container">
     <div class="row">
         <div class="col-md text-center mt-1">
             <img width="250" src="{% static card_img1 %}" alt="{{card_alt1}}" />
@@ -22,8 +23,19 @@
             <button class="btn btn-primary btn-lg" onclick="scrollDivId('header3')" >Learn more</button>
         </div>
     </div>
-
+    <hr class="featurette-divider" />  
+  </div>
+  
+  <div class="container">
+  <div class="">
+    <h1 class="text-center text-responsive-small pt-3">We have many companies to choose from</h1>
+    <img class="img-fluid w-100" src={% static banner_img %} alt={{ banner_alt }}>  
     <hr class="featurette-divider" />
+  </div>
+  </div>
+  
+  <div class="container">
+    
 
     <div class="row featurette" id="header1">
         <div class="col-md-7">
@@ -60,4 +72,5 @@
     </div>
 
     <hr class="featurette-divider" />
+    </div>
 </div>

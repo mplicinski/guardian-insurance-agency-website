@@ -67,6 +67,9 @@ class PersonalView(TemplateView):
             'card_img3': 'images/star-of-life-solid.png',
             'card_alt3': "Home graphic",
 
+            #banner
+            'banner_img':"images/personal_companies_banner.png",
+
             # features
             # feature 1 - home
             'feature_title1': "Home Insurance",
@@ -116,6 +119,9 @@ class CommercialView(TemplateView):
             'card_text3': "Insurance for contractors and businesses.",
             'card_img3': 'images/tools-solid.png',
             'card_alt3': "Tools graphic",
+
+            # banner
+            'banner_img':"images/commercial_companies_banner.png",
 
             # features
             # feature 1 - dump truck
